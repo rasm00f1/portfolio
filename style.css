@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+p {
+  font-family: "Headliner", cursive;
+  font-size: 5rem;
+}
+
+.close_btn {
+  cursor: pointer;
+  padding-top: 5vh;
+  color: white;
+  text-shadow: 1px 1px 5px rgba(80, 80, 80, 0.5);
+  text-align: center;
+}
+
+.about_me {
+  align-self: flex-start;
+  margin-left: 15.5%;
+  font-size: 2rem;
+}
+
+.project_title {
+  align-self: flex-start;
+  font-size: 1.5rem;
+}
+
+.top_nav {
+  z-index: 1;
+  position: fixed;
+
+  padding-left: 5vw;
+  padding-right: 5vw;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.25);
+  width: 100vw;
+  height: 5vh;
+}
+
+.menu_container {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-family: "Headliner";
+}
+
+.menu_container a {
+  color: white;
+  padding-top: 5px;
+  height: 5vh;
+  width: 100px;
+  text-align: center;
+
+  transition: height 0.25s ease-out, padding 0.25s ease-out;
+}
+
+.menu_container a:hover {
+  height: 7vh;
+  padding-top: 3vh;
+  transition: 0.5s;
+}
+
+.menu_container a:nth-child(1) {
+  background-color: rgb(230, 165, 90);
+  box-shadow: -3px 0px 5px rgba(128, 128, 128, 0.25);
+}
+
+.menu_container a:nth-child(2) {
+  background-color: rgb(100, 59, 146);
+  box-shadow: -3px 0px 5px rgba(172, 124, 54, 0.397);
+}
+
+.menu_container a:nth-child(3) {
+  background-color: rgb(40, 110, 75);
+  box-shadow: -3px 0px 5px rgba(40, 6, 44, 0.322);
+}
+
+.home_txt {
+  font-size: 3rem;
+  font-family: "Big Shoulders Display", cursive;
+  text-decoration: none;
+  color: rgb(32, 23, 23);
+}
+
+.slide {
+  width: 1920px;
+  height: 80vh;
+}
+
+.wrapper {
+  scroll-snap-type: x proximity;
+  display: flex;
+  flex-direction: row;
+  width: 400vw;
+
+  transform: rotate(90deg) translateY(-100vh);
+  transform-origin: top left;
+}
+
+.outer_wrapper {
+  height: 100vw;
+  width: 100vh;
+
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+}
+
+.wall {
+  scroll-snap-align: start;
+  width: 1920px;
+  height: 90vh;
+  background: rgb(250, 243, 236);
+  background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgb(207, 201, 201) 100%);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.self_portrait {
+  position: relative;
+  height: 600px;
+  box-shadow: 2px 2px 5px rgb(140, 140, 140);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.txt_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+.info_box {
+  width: 1920px;
+  height: 100vh;
+  background: rgb(255, 188, 120);
+  background: linear-gradient(0deg, rgb(255, 196, 138) 0%, rgb(230, 165, 90) 100%);
+}
+
+.info_box_project {
+  width: 1920px;
+  height: 100vh;
+  background: rgb(255, 188, 120);
+  background: linear-gradient(0deg, rgb(125, 70, 185) 0%, rgb(125, 80, 215) 100%);
+}
+
+.project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+}
+
+.txt_animation_container:hover {
+  animation: shake 2s forwards infinite;
+  cursor: pointer;
+}
+
+button {
+  font-size: 2rem;
+  background-color: rgb(50, 55, 55);
+  font-family: "Headliner";
+  color: white;
+
+  padding: 5px 15px;
+
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 2px;
+  box-shadow: 1px 1px 5px rgb(100, 120, 120, 0.5);
+}
+
+button:hover {
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: 0.25s;
+}
+
+.image_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.letter {
+  --delay: 0;
+  animation: letter_kf 1s cubic-bezier(0.66, 0.06, 0.26, 1.28);
+  animation-fill-mode: both;
+  animation-delay: calc(var(--delay) * 0.02s);
+}
+
+@keyframes letter_kf {
+  0% {
+    opacity: 0;
+    transform: translateY(4vw);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0vw);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(2px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(2px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@media (max-width: 400px) {
+  .image_container {
+    margin-left: -25vw;
+  }
+
+  .self_portrait {
+    height: 500px;
+  }
+
+  .about_me {
+    margin-left: 21%;
+  }
+}
+
+@font-face {
+  font-family: "Headliner";
+  src: url("assets/fonts/HeadlinerNo_45.ttf");
+}
+
+@font-face {
+  font-family: "Royalo";
+  src: url("assets/fonts/Royalacid_o.ttf");
+}
